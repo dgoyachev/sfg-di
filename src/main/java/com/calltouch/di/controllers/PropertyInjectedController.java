@@ -7,11 +7,12 @@ import org.springframework.stereotype.Controller;
 /**
  * Created by morgan on 22.02.2020
  */
-
 @Controller
-public class SetterInjectedController extends AbstractController {
+public class PropertyInjectedController {
     @Autowired
-    public void setGreetingService(GreetingService greetingService) {
-        this.greetingService = greetingService;
+    public GreetingService greetingService;
+
+    public String getGreeting() {
+        return greetingService.sayGreeting();
     }
 }
