@@ -1,10 +1,8 @@
 package com.calltouch.di.controllers;
 
-import com.calltouch.di.services.GreetingServiceImpl;
+import com.calltouch.di.services.PropertyGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterInjectedControllerTest {
 
@@ -13,7 +11,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterInjectedController();
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new PropertyGreetingService());
     }
 
     @Test
