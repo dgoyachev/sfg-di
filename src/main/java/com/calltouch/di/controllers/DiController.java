@@ -1,5 +1,6 @@
 package com.calltouch.di.controllers;
 
+import com.calltouch.di.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -9,8 +10,14 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class DiController {
 
+    private final GreetingService greetingService;
+
+    public DiController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     public String sayHello() {
-        System.out.println("Hello World!");
+        System.out.println(greetingService.sayGreeting());
         return "Hi folks!";
     }
 }
