@@ -8,9 +8,7 @@ import org.springframework.stereotype.Controller;
  */
 
 @Controller
-public class DiController {
-
-    private final GreetingService greetingService;
+public class DiController extends AbstractController {
 
     public DiController(GreetingService greetingService) {
         this.greetingService = greetingService;

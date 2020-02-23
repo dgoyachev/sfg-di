@@ -1,9 +1,6 @@
 package com.calltouch.di;
 
-import com.calltouch.di.controllers.ConstructorInjectedController;
-import com.calltouch.di.controllers.DiController;
-import com.calltouch.di.controllers.PropertyInjectedController;
-import com.calltouch.di.controllers.SetterInjectedController;
+import com.calltouch.di.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,10 @@ public class DiApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(DiApplication.class, args);
+
+		System.out.println("i18n controller");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.getGreeting());
 
 		System.out.println("di controller");
 		DiController diController = (DiController) ctx.getBean("diController");
