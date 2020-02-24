@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DiApplication {
 
 	public static void main(String[] args) {
+		System.out.println("Main app before");
 		SpringApplication.run(DiApplication.class, args);
+		System.out.println("Main app after");
 	}
 
 }
